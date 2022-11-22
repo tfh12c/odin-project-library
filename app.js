@@ -13,6 +13,34 @@ let myLibrary = [
         description: "In this “candid and blackly funny” (The New York Times) memoir, Hillary Rodham Clinton reveals what she was thinking and feeling during one of the most controversial and unpredictable presidential elections in history. She takes us inside the intense personal experience of becoming the first woman nominated for president by a major party in an election marked by rage, sexism, exhilarating highs and infuriating lows, stranger-than-fiction twists, Russian interference, and an opponent who broke all the rules.",
         read: false
     },
+    {
+        title: "Harry Potter and the Deathly Hallows",
+        author: "J. K. Rowling",
+        pages: 607,
+        description: "Harry Potter and the Deathly Hallows is a fantasy novel written by British author J. K. Rowling and the seventh and final novel of the main Harry Potter series. It was released on 21 July 2007 in the United Kingdom by Bloomsbury Publishing, in the United States by Scholastic, and in Canada by Raincoast Books. The novel chronicles the events directly following Harry Potter and the Half-Blood Prince (2005) and the final confrontation between the wizards Harry Potter and Lord Voldemort.",
+        read: true
+    },
+    {
+        title: "The Ride of a Lifetime",
+        author: "Robert Iger",
+        pages: 272,
+        description: "Robert Iger became CEO of The Walt Disney Company in 2005, during a difficult time. Competition was more intense than ever and technology was changing faster than at any time in the company’s history. His vision came down to three clear ideas: Recommit to the concept that quality matters, embrace technology instead of fighting it, and think bigger—think global—and turn Disney into a stronger brand in international markets. Today, Disney is the largest, most admired media company in the world, counting Pixar, Marvel, Lucasfilm, and 21st Century Fox among its properties. Its value is nearly five times what it was when Iger took over, and he is recognized as one of the most innovative and successful CEOs of our era.",
+        read: false
+    },
+    {
+        title: "Unfu*k Yourself",
+        author: "Gary John Bishop",
+        pages: 224,
+        description: "Are you tired of feeling fu*ked up? If you are, Gary John Bishop has the answer. In this straightforward handbook, he gives you the tools and advice you need to demolish the slag weighing you down and become the truly unfu*ked version of yourself. ''Wake up to the miracle you are,'' he directs. ''Here's what you've forgotten: You're a fu*king miracle of being.'' It isn't other people that are standing in your way, it isn't even your circumstances that are blocking your ability to thrive, it's yourself and the negative self-talk you keep telling yourself.",
+        read: false
+    },
+    {
+        title: "Me Talk Pretty One Day",
+        author: "David Sedaris",
+        pages: 288,
+        description: "Me Talk Pretty One Day, published in 2000, is a bestselling collection of essays by American humorist David Sedaris. The book is separated into two parts. The first part consists of essays about Sedaris’s life before his move to Normandy, France, including his upbringing in suburban Raleigh, North Carolina, his time working odd jobs in New York City, and a visit to New York from a childhood friend and her bumpkinish girlfriend. The second section, 'Deux', tells of Sedaris’s move to Normandy with his partner Hugh, often drawing humor from his efforts to live in France without speaking the French language and his frustrated attempts to learn it.",
+        read: false
+    },
 ];
 
 function Book(title, author, pages, description, read) {

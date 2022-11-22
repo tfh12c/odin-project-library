@@ -33,9 +33,17 @@ body {
   padding: 1rem;
   justify-content: space-between;
 }
+.header__title-container {
+  display: flex;
+  align-items: center;
+}
 .header__title {
   margin: 0;
   font-size: 1.875rem;
+}
+.header__title-icon {
+  height: 2.25rem;
+  margin-left: 0.3125rem;
 }
 .header__add-book-button {
   border: none;
@@ -76,9 +84,54 @@ body {
 }
 .book__title {
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 20px;
 }
 .book__author {
   margin-bottom: 0;
+  font-size: 14px;
+}
+.book__pages {
   font-size: 12px;
+}
+.book__description {
+  font-size: 16px;
+}
+.book__button-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: auto;
+}
+.book__is-read {
+  border: none;
+  color: white;
+  background-color: #9FCD99;
+  border-radius: 4px;
+  width: 7rem;
+  height: 2rem;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.book__is-not-read {
+  border: none;
+  color: white;
+  background-color: #F26C64;
+  border-radius: 4px;
+  width: 7rem;
+  height: 2rem;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.book__remove-button {
+  border: none;
+  color: white;
+  background-color: #545454;
+  border-radius: 4px;
+  width: 7rem;
+  height: 2rem;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

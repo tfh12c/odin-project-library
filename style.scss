@@ -14,9 +14,19 @@ body {
     padding: 1rem;
     justify-content: space-between;
 
+    &__title-container {
+        display: flex;
+        align-items: center;
+    }
+
     &__title {
         margin: 0;
         font-size: 1.875rem;
+    }
+
+    &__title-icon {
+        height: 2.25rem;
+        margin-left: .3125rem;
     }
 
     &__add-book-button {
@@ -61,19 +71,74 @@ body {
 
     &__title {
         margin-bottom: 0;
-        font-size: 16px; 
+        font-size: 20px; 
     }
 
     &__author {
         margin-bottom: 0;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     &__pages {
-
+        font-size: 12px;
     }
 
-    &__is-read-button {
+    &__description {
+        font-size: 16px;
+    }
 
+    &__button-div {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: auto;
+    }
+
+    &__is-read {
+        border: none;
+        color: white;
+        background-color: #9FCD99;
+        border-radius: 4px;
+        width: 7rem;
+        height: 2rem;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            // background-color: #BC544B;
+        }
+    }
+
+    &__is-not-read {
+        border: none;
+        color: white;
+        background-color: #F26C64;
+        border-radius: 4px;
+        width: 7rem;
+        height: 2rem;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            // background-color: #BC544B;
+        }
+    }
+
+    &__remove-button {
+        border: none;
+        color: white;
+        background-color: #545454;
+        border-radius: 4px;
+        width: 7rem;
+        height: 2rem;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            // background-color: #BC544B;
+        }
     }
 }
