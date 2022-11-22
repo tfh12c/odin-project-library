@@ -59,15 +59,30 @@ function displayBook(myLibrary) {
 
         //create book description
         const bookDescription = document.createElement('p');
-        bookDescription.classList.add('book-description');
+        bookDescription.classList.add('book__description');
         bookDescription.innerText = book.description;
         bookElement.appendChild(bookDescription);
 
+        //create div to hold isRead and delete buttons
+        const bookButtonDiv = document.createElement('div');
+        bookButtonDiv.classList.add('book__button-div');
+        bookElement.appendChild(bookButtonDiv);
+
         //create isRead 
         const isRead = document.createElement('button');
-        isRead.classList.add('book__is-read-button');
+        if (book.read === true) {
+            isRead.classList.add('book__is-read');
+        } else {
+            isRead.classList.add('book__is-not-read');
+        }
         isRead.innerText = (book.read === true) ? "Read" : "Not Read";
-        bookElement.appendChild(isRead);
+        bookButtonDiv.appendChild(isRead);
+
+        //create remove book buton
+        const removeBook = document.createElement('button');
+        removeBook.classList.add('book__remove-button');
+        removeBook.innerText = "Remove Book";
+        bookButtonDiv.appendChild(removeBook);
     })
 }
 displayBook(myLibrary);
