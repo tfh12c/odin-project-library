@@ -11,6 +11,27 @@
     <main class="main">
         <h1 class="main__title">Library Project</h1>
         <button class="main__add-book-button">+ New Book</button>
+        <!-- Modal to add new book -->
+        <div id="myModal" class="main__modal">
+            <div class="main__modal-content">
+                <!-- Form to add book -->
+                <form class="main__modal-content-form" action="./app.js" method="post">
+                    <!-- Input for title -->
+                    <label class="main__modal-book-title-label" for="book-title">Book Title:</label>
+                    <input class="main__modal-book-title-input" type="text" id="book-title" name="book-title">
+                    <!-- Input for author -->
+                    <label class="main__modal-book-author-label" for="book-author">Book Author:</label>
+                    <input class="main__modal-book-author-input" type="text" id="book-author" name="book-author">
+                    <!-- Input for pages -->
+                    <label class="main__modal-book-pages-label" for="book-pages"># of Pages:</label>
+                    <input class="main__modal-book-pages-input" type="number" id="book-pages" name="book-pages">
+                    <!-- Input/button for read/not read -->
+                    <input class="main__modal-book-isread-input" type="checkbox" id="book-isread" name="book-isread">
+                    <label class="main__modal-book-isread-label" for="book-isread">I have read this book.</label>
+                </form>
+            </div>
+        </div>
+        <!-- Holds book articles  -->
         <div class="main__book-cards"></div>
     </main>
     <script src="./app.js"></script>
