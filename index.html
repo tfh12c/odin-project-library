@@ -20,7 +20,7 @@
         <div id="myModal" class="main__modal">
             <div class="main__modal-content">
                 <!-- Form to add book -->
-                <form class="main__modal-content-form" action="./app.js" method="post">
+                <form class="main__modal-content-form" method="post">
                     <!-- Input for title -->
                     <label class="main__modal-book-title-label" for="book-title">Book Title:</label>
                     <input class="main__modal-book-title-input" type="text" id="book-title" name="book-title">
@@ -30,9 +30,16 @@
                     <!-- Input for pages -->
                     <label class="main__modal-book-pages-label" for="book-pages"># of Pages:</label>
                     <input class="main__modal-book-pages-input" type="number" id="book-pages" name="book-pages">
+                    <!-- Input for description -->
+                    <label class="main__modal-book-description-label" for="book-description">Description of Book</label>
+                    <textarea class="main__modal-book-description-input" id="book-description" name="book-description" rows="10" placeholder="Please enter a description..."></textarea>
                     <!-- Input/button for read/not read -->
-                    <input class="main__modal-book-isread-input" type="checkbox" id="book-isread" name="book-isread">
-                    <label class="main__modal-book-isread-label" for="book-isread">I have read this book.</label>
+                    <div class="main__modal-book-isread-container"> 
+                        <label class="main__modal-book-isread-label" for="book-isread">I have read this book:</label>  
+                        <input class="main__modal-book-isread-input" type="checkbox" id="book-isread" name="book-isread">
+                    </div>
+                        <!-- Submit Button -->
+                    <button class="main__modal-book-submit-button" type="submit">SUBMIT</button>
                     <!-- Close Modal span -->
                     <span class="main__modal-close">&times;</span>
                 </form>

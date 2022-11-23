@@ -63,7 +63,6 @@ body {
   background-color: #f2f2f2;
 }
 .main__modal {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -80,11 +79,34 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: red;
+  background-color: #f2f2f2;
+  width: 20rem;
+  height: 25rem;
+  padding: 1rem;
+  border-radius: 4px;
 }
 .main__modal-content-form {
   display: flex;
   flex-direction: column;
+}
+.main__modal-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #545454;
+  cursor: pointer;
+}
+.main__modal-close:hover {
+  color: black;
+}
+.main__modal-book-title-label {
+  margin-top: 1rem;
+  margin-bottom: 4px;
+}
+.main__modal-book-title-input {
+  height: 24px;
 }
 .main__book-cards {
   display: grid;

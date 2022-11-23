@@ -50,7 +50,7 @@ body {
 
     // Must make parent div holding modal 100% width & height so function to close on window click will work
     &__modal {
-        display: none; //hidden by default
+        // display: none; //hidden by default
         position: fixed; //stay in place
         z-index: 1; //sit on top
         left: 0;
@@ -64,16 +64,43 @@ body {
 
     &__modal-content {
         //this will center the modal to center of page
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background-color: red;
+        position: absolute; //center
+        left: 50%; //center
+        top: 50%; //center
+        transform: translate(-50%, -50%); //center
+        background-color: #f2f2f2;
+        width: 20rem;
+        height: 25rem;
+        padding: 1rem;
+        border-radius: 4px;
     }
 
     &__modal-content-form {
         display: flex;
         flex-direction: column;
+    }
+
+    &__modal-close {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 30px;
+        font-weight: 700;
+        color: #545454;
+        cursor: pointer; 
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    &__modal-book-title-label {
+        margin-top: 1rem;
+        margin-bottom: 4px;
+    }
+
+    &__modal-book-title-input {
+        height: 24px;
     }
 
     &__book-cards {
