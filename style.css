@@ -81,7 +81,7 @@ body {
   transform: translate(-50%, -50%);
   background-color: #f2f2f2;
   width: 20rem;
-  height: 25rem;
+  height: 29rem;
   padding: 1rem;
   border-radius: 4px;
 }
@@ -106,7 +106,33 @@ body {
   margin-bottom: 4px;
 }
 .main__modal-book-title-input {
-  height: 24px;
+  height: 26px;
+}
+.main__modal-book-author-label {
+  margin-top: 0.5rem;
+  margin-bottom: 4px;
+}
+.main__modal-book-author-input {
+  height: 26px;
+}
+.main__modal-book-pages-label {
+  margin-top: 0.5rem;
+  margin-bottom: 4px;
+}
+.main__modal-book-pages-input {
+  height: 26px;
+}
+.main__modal-book-description-label {
+  margin-top: 0.5rem;
+  margin-bottom: 4px;
+}
+.main__modal-book-isread-container {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.main__modal-book-submit-button {
+  margin-top: 0.5rem;
 }
 .main__book-cards {
   display: grid;

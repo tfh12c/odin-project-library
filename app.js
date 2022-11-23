@@ -116,8 +116,8 @@ function displayBook(myLibrary) {
 }
 displayBook(myLibrary);
 
-//html elements
-var modal = document.getElementById('myModal');
+//html elements for modal
+const modal = document.getElementById('myModal');
 const openModal = document.querySelector('.header__add-book-button');
 const closeModal = document.querySelector('.main__modal-close');
 
@@ -131,8 +131,5 @@ closeModal.addEventListener('click', () => {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }
-    else {
-        console.log('hi');
     }
 }
