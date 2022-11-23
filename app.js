@@ -43,6 +43,7 @@ let myLibrary = [
     },
 ];
 
+//Constructor Function for Book
 function Book(title, author, pages, description, read) {
     this.title = title,
     this.author = author,
@@ -114,3 +115,24 @@ function displayBook(myLibrary) {
     })
 }
 displayBook(myLibrary);
+
+//html elements
+var modal = document.getElementById('myModal');
+const openModal = document.querySelector('.header__add-book-button');
+const closeModal = document.querySelector('.main__modal-close');
+
+//event listeners for modal
+openModal.addEventListener('click', () => {
+    modal.style.display = "flex";
+})
+closeModal.addEventListener('click', () => {
+    modal.style.display = "none";
+})
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    else {
+        console.log('hi');
+    }
+}

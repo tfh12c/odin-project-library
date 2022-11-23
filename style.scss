@@ -48,8 +48,32 @@ body {
 .main {
     background-color: #f2f2f2;
 
+    // Must make parent div holding modal 100% width & height so function to close on window click will work
     &__modal {
-        display: none;
+        display: none; //hidden by default
+        position: fixed; //stay in place
+        z-index: 1; //sit on top
+        left: 0;
+        top: 0;
+        width: 100%; //required
+        height: 100%; //required
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+    }
+
+    &__modal-content {
+        //this will center the modal to center of page
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: red;
+    }
+
+    &__modal-content-form {
+        display: flex;
+        flex-direction: column;
     }
 
     &__book-cards {
