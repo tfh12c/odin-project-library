@@ -1,19 +1,5 @@
 let myLibrary = [
     {
-        title: "The Audacity of Hope",
-        author: "Barack Obama",
-        pages: 362,
-        description: "The Audacity of Hope: Thoughts on Reclaiming the American Dream is the second book written by Barack Obama.[1] It became number one on both the New York Times and Amazon.com bestsellers lists in the fall of 2006, after Obama had been endorsed by Oprah Winfrey.[2] In the book, Obama expounds on many of the subjects that became part of his 2008 campaign for the presidency.",
-        read: true
-    },
-    {
-        title: "What Happened",
-        author: "Hillary Clinton",
-        pages: 512,
-        description: "In this “candid and blackly funny” (The New York Times) memoir, Hillary Rodham Clinton reveals what she was thinking and feeling during one of the most controversial and unpredictable presidential elections in history. She takes us inside the intense personal experience of becoming the first woman nominated for president by a major party in an election marked by rage, sexism, exhilarating highs and infuriating lows, stranger-than-fiction twists, Russian interference, and an opponent who broke all the rules.",
-        read: false
-    },
-    {
         title: "Harry Potter and the Deathly Hallows",
         author: "J. K. Rowling",
         pages: 607,
@@ -52,52 +38,48 @@ function Book(title, author, pages, description, read) {
     this.read = read
 }
 
-function addBookToLibrary() {
-    //this function will run after hitting submit button to add book to myLibrary array
-}
-
-//div to hold book cards
+//Div to hold book cards
 const bookCards = document.querySelector('.main__book-cards');
 
 function displayBook(myLibrary) {
-    bookCards.innerHTML = ''; //clear books before appending to avoid dupes
+    bookCards.innerHTML = ''; //Clear books before appending to avoid dupes
 
     myLibrary.forEach((book) => {
-        //create book article 
+        //Create book article 
         const bookElement = document.createElement('article');
         bookElement.classList.add('book');
         bookCards.appendChild(bookElement);
 
-        //create book title
+        //Create book title
         const bookTitle = document.createElement('h2');
         bookTitle.classList.add('book__title');
         bookTitle.innerText = book.title;
         bookElement.appendChild(bookTitle);
 
-        //create book author
+        //Create book author
         const bookAuthor = document.createElement('h3');
         bookAuthor.classList.add('book__author');
         bookAuthor.innerText = `by ${book.author}`;
         bookElement.appendChild(bookAuthor);
 
-        //create book pages
+        //Create book pages
         const bookPages = document.createElement('p');
         bookPages.classList.add('book__pages');
         bookPages.innerText = `${book.pages} pages`;
         bookElement.appendChild(bookPages);
 
-        //create book description
+        //Create book description
         const bookDescription = document.createElement('p');
         bookDescription.classList.add('book__description');
         bookDescription.innerText = book.description;
         bookElement.appendChild(bookDescription);
 
-        //create div to hold isRead and delete buttons
+        //Create div to hold isRead and delete buttons
         const bookButtonDiv = document.createElement('div');
         bookButtonDiv.classList.add('book__button-div');
         bookElement.appendChild(bookButtonDiv);
 
-        //create isRead 
+        //Create isRead 
         const isRead = document.createElement('button');
         if (book.read === true) {
             isRead.classList.add('book__is-read');
@@ -107,7 +89,7 @@ function displayBook(myLibrary) {
         isRead.innerText = (book.read === true) ? "Read" : "Not Read";
         bookButtonDiv.appendChild(isRead);
 
-        //create remove book buton
+        //Create remove book buton
         const removeBook = document.createElement('button');
         removeBook.classList.add('book__remove-button');
         removeBook.innerText = "Remove Book";
@@ -116,20 +98,84 @@ function displayBook(myLibrary) {
 }
 displayBook(myLibrary);
 
-//html elements for modal
+//HTML elements for modal open/close functions
 const modal = document.getElementById('myModal');
 const openModal = document.querySelector('.header__add-book-button');
 const closeModal = document.querySelector('.main__modal-close');
 
-//event listeners for modal
 openModal.addEventListener('click', () => {
     modal.style.display = "flex";
 })
 closeModal.addEventListener('click', () => {
     modal.style.display = "none";
 })
+//If clicking outside of modal-content, close modal
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+//Gets modal form
+const modalForm = document.querySelector('.main__modal-content-form');
+
+//Form event listener to submit new book
+modalForm.addEventListener('submit', handleFormSubmit);
+
+function handleFormSubmit(event) {
+    event.preventDefault(); //Prevent auto refresh
+    formValidation();
+    addBookToLibrary();
+}
+
+ //HTML elements for form validation
+ const formBookTitle = document.querySelector('.main__modal-book-title-input');
+ const formBookAuthor = document.querySelector('.main__modal-book-author-input');
+ const formBookPages = document.querySelector('.main__modal-book-pages-input');
+ const formBookDescription = document.querySelector('.main__modal-book-description-input');
+
+function formValidation() {
+    if (!formBookTitle.value || formBookTitle === "") {
+        formBookTitle.style.border = '1px solid';
+        formBookTitle.style.borderColor = '#D22D2D';
+        alert("Please enter a book title.")
+        return false;
+    }
+    if (!formBookAuthor.value || formBookAuthor === "") {
+        formBookAuthor.style.border = '1px solid';
+        formBookAuthor.style.borderColor = '#D22D2D';
+        alert("Please enter a book author.");
+        return false; 
+    }
+    if (!formBookPages.value || formBookPages === '') {
+        formBookPages.style.border = '1px solid';
+        formBookPages.style.borderColor = '#D22D2D';
+        alert("Please enter number of pages.");
+        return false;
+    }
+    if (!formBookDescription.value || formBookDescription === "") {
+        formBookDescription.style.border = '1px solid';
+        formBookDescription.style.borderColor = '#D22D2D';
+        alert("Please enter a book description.");
+        return false;
+    }
+}
+
+function addBookToLibrary() {
+    const title = formBookTitle.value;
+    const author = formBookAuthor.value;
+    const pages = formBookPages.value;
+    const description = formBookDescription.value;
+    let read = document.querySelector('.main__modal-book-isread-input');
+    if (read.checked) {
+        read = true;
+    } else {
+        read = false;
+    }
+    if (title === '' || author === '' || pages === '' || description === '') {
+        return false;
+    }
+    const newBook = new Book(title, author, pages, description, read);
+    myLibrary.push(newBook);
+    displayBook(myLibrary);
 }

@@ -50,7 +50,7 @@ body {
 
     // Must make parent div holding modal 100% width & height so function to close on window click will work
     &__modal {
-        // display: none; //hidden by default
+        display: none; //hidden by default
         position: fixed; //stay in place
         z-index: 1; //sit on top
         left: 0;
