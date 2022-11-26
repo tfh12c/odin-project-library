@@ -38,7 +38,7 @@ function Book(title, author, pages, description, read) {
     this.read = read
 }
 
-//Div to hold book cards
+//Div to hold book articles
 const bookCards = document.querySelector('.main__book-cards');
 
 function displayBook(myLibrary) {
@@ -88,20 +88,16 @@ function displayBook(myLibrary) {
         }
         isRead.innerText = (book.read === true) ? "Read" : "Not Read";
         bookButtonDiv.appendChild(isRead);
+        //Event listener to switch status
+        isRead.addEventListener('click', switchReadStatus);
 
         //Create remove book buton
         const removeBook = document.createElement('button');
         removeBook.classList.add('book__remove-button');
         removeBook.innerText = "Remove Book";
         bookButtonDiv.appendChild(removeBook);
-
-        removeBook.addEventListener('click', (event) => {
-            let htmlTitle = event.target.parentNode.parentNode.firstChild.innerText;
-            const newLibrary = myLibrary.filter((book) => {
-            return (book.title != htmlTitle);
-        })
-        displayBook(newLibrary);
-        })
+        //Event listener for remove button
+        removeBook.addEventListener('click', removeBookFromLibrary);
     })
 }
 displayBook(myLibrary);
@@ -194,17 +190,21 @@ modalSubmitButton.addEventListener('click', () => {
     modal.style.display = "none";
 })
 
-//Get read/not read and remove book buttons
-const isReadButton = document.querySelectorAll('.book__is-read');
-const isNotReadButton = document.querySelectorAll('.book__is-not-read');
-const removeBookButton = document.querySelectorAll('.book__remove-button');
+function removeBookFromLibrary(event) {
+    const htmlTitle = event.target.parentNode.parentNode.firstChild.innerText;
+    const newLibrary = myLibrary.filter((book) => {
+    return (book.title != htmlTitle);
+    })
+    displayBook(newLibrary);
+}
 
-// removeBookButton.forEach((button) => {
-//     button.addEventListener('click', (event) => {
-//         let htmlTitle = event.target.parentNode.parentNode.firstChild.innerText;
-//         const newLibrary = myLibrary.filter((book) => {
-//             return (book.title != htmlTitle);
-//         })
-//         displayBook(newLibrary);
-//     })
-// })
+function switchReadStatus(event) {
+    const htmlTitle = event.target.parentNode.parentNode.firstChild.innerText;
+    const foundBook = myLibrary.find(book => book.title === htmlTitle);
+    if (foundBook.read === true) {
+        foundBook.read = false;
+    } else {
+        foundBook.read = true;
+    }
+    displayBook(myLibrary);
+}
