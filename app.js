@@ -192,10 +192,9 @@ modalSubmitButton.addEventListener('click', () => {
 
 function removeBookFromLibrary(event) {
     const htmlTitle = event.target.parentNode.parentNode.firstChild.innerText;
-    const newLibrary = myLibrary.filter((book) => {
-    return (book.title != htmlTitle);
-    })
-    displayBook(newLibrary);
+    const index = myLibrary.findIndex(book => book.title === htmlTitle);
+    myLibrary.splice(index, 1);
+    displayBook(myLibrary);
 }
 
 function switchReadStatus(event) {
