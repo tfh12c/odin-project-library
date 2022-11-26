@@ -179,3 +179,32 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     displayBook(myLibrary);
 }
+
+//Close modal when clicking on submit button
+const modalSubmitButton = document.querySelector('.main__modal-book-submit-button');
+modalSubmitButton.addEventListener('click', () => {
+    modal.style.display = "none";
+})
+
+//Get read/not read and remove book buttons
+const isReadButton = document.querySelectorAll('.book__is-read');
+const isNotReadButton = document.querySelectorAll('.book__is-not-read');
+const removeBookButton = document.querySelectorAll('.book__remove-button');
+
+// isNotReadButton.forEach(button => {
+//     button.addEventListener('click', (event) => {
+//         //use mylibrary array, iterate through it
+//         //get target html inner text title, loop through array and if compare to array.title
+//         //if match, update read 
+//     })
+// })
+
+removeBookButton.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        let htmlTitle = event.target.parentNode.parentNode.firstChild.innerText;
+        const newLibrary = myLibrary.filter((book) => {
+            return (book.title != htmlTitle);
+        })
+        displayBook(newLibrary);
+    })
+})

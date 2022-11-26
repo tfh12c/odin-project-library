@@ -183,6 +183,9 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
+.book__is-read:hover {
+  background-color: #5d785a;
+}
 .book__is-not-read {
   border: none;
   color: white;
@@ -194,6 +197,9 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
+.book__is-not-read:hover {
+  background-color: #9d4641;
+}
 .book__remove-button {
   border: none;
   color: white;
@@ -204,4 +210,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+}
+.book__remove-button:hover {
+  background-color: black;
 }/*# sourceMappingURL=style.css.map */
